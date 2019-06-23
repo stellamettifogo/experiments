@@ -27,33 +27,35 @@ def random7() -> int:
 
 # test random5
 
-distribution = [0] * 100
+distribution5 = [0, 0, 0, 0, 0]
 
 for i in range(5000):
     rnd = random5()
     #print(rnd)
     assert rnd >= 1 and rnd <= 5
     # keep track of random distribution
-    distribution[rnd] = distribution[rnd] + 1 
+    distribution5[rnd -1] = distribution5[rnd -1] + 1 
 
-print(distribution)
+print(distribution5)
 
 # test random2 base0
-distribution = [0] * 100
+distribution2 = [0,0]
 for i in range(5000):
     rnd = zero_or_one()
     assert rnd >= 0 and rnd <= 1
-    distribution[rnd] = distribution[rnd] + 1 
-print(distribution)
+    distribution2[rnd] = distribution2[rnd] + 1 
+print(distribution2)
 
 
 # test random7
-distribution = [0] * 100
+distribution7 = [0] * 7
 for i in range(7000):
     rnd = random7()
     assert rnd >= 1 and rnd <= 7
-    distribution[rnd] = distribution[rnd] + 1 
-print(distribution)
+    distribution7[rnd -1 ] = distribution7[rnd -1 ] + 1 
+print(distribution7)
+
+
     
 
 
