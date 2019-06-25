@@ -5,11 +5,17 @@ def palindrome(word):
     word_len = len(word)
     max_pal_index = 0
     max_pal_size = 0
+    max_possible_pal_size = 0
     # loop esterno (index)
     for i in range(0, word_len - 1):
         # loop interno (size)
         pal_size = 1
-        while pal_size <= min(i +1, word_len -i -1) and word[i - pal_size +1] == word[i + pal_size]:
+        max_possible_pal_size = min(i +1, word_len -i -1)
+        its_worth_it = max_possible_pal_size > max_pal_size
+        if not its_worth_it:
+            # blocca il ciclo
+            break
+        while pal_size <= max_possible_pal_size and word[i - pal_size +1] == word[i + pal_size]:
             if pal_size > max_pal_size:
                 max_pal_size = pal_size
                 max_pal_index = i
