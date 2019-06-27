@@ -13,7 +13,7 @@ def best_buy(prices):
             best_so_far = prices[sell] - prices[buy]
             best_now = prices[j] - prices[i]
             if best_now > best_so_far:
-                buy = i 
+                buy = i
                 sell = j
 
     return buy, sell
